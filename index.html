@@ -3,16 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>טיול יפן — הצבעת הפעילויות</title>
+<title>טיול יפן · גרסה 2 — פעילויות חדשות</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
   --ink: #1a1a1a;
@@ -40,12 +36,12 @@ html, body {
   overflow-x: hidden;
 }
 
-/* ============ כותרת ראשית ============ */
+/* HERO */
 .hero {
   position: relative;
   background: linear-gradient(180deg, #1a1f2e 0%, #2d3647 100%);
   color: #faf8f3;
-  padding: 60px 20px 50px;
+  padding: 50px 20px 40px;
   text-align: center;
   overflow: hidden;
 }
@@ -60,9 +56,22 @@ html, body {
   opacity: 0.15;
 }
 
+.hero-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: #1a1f2e;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  position: relative;
+}
+
 .hero-kanji {
   font-family: 'Noto Serif JP', serif;
-  font-size: 80px;
+  font-size: 60px;
   font-weight: 900;
   color: var(--gold);
   opacity: 0.9;
@@ -72,30 +81,29 @@ html, body {
 }
 
 .hero h1 {
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 800;
   letter-spacing: -0.5px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   position: relative;
 }
 
-.hero-dates {
-  font-size: 16px;
+.hero-subtitle {
+  font-size: 14px;
   color: var(--gold);
   font-weight: 500;
-  letter-spacing: 0.5px;
-  margin-bottom: 4px;
   position: relative;
+  margin-bottom: 4px;
 }
 
 .hero-travelers {
-  font-size: 14px;
+  font-size: 13px;
   opacity: 0.8;
   font-weight: 300;
   position: relative;
 }
 
-/* ============ ברי פרוגרס ============ */
+/* PROGRESS */
 .progress-container {
   background: var(--paper-card);
   border-bottom: 1px solid var(--line);
@@ -145,8 +153,8 @@ html, body {
   text-align: left;
 }
 
-/* ============ הוראות ============ */
-.instructions {
+/* INTRO */
+.intro {
   max-width: 700px;
   margin: 30px auto 20px;
   padding: 24px;
@@ -156,54 +164,28 @@ html, body {
   box-shadow: 0 2px 12px var(--shadow);
 }
 
-.instructions h2 {
-  font-size: 20px;
+.intro h2 {
+  font-size: 18px;
   font-weight: 700;
   color: var(--sakura-dark);
-  margin-bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.instructions h2::before {
-  content: '📖';
-  font-size: 24px;
-}
-
-.instructions ol {
-  list-style: none;
-  counter-reset: step;
-}
-
-.instructions li {
-  counter-increment: step;
-  position: relative;
-  padding-right: 36px;
   margin-bottom: 10px;
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--sumi);
-}
-
-.instructions li::before {
-  content: counter(step);
-  position: absolute;
-  right: 0;
-  top: 2px;
-  width: 24px;
-  height: 24px;
-  background: var(--sakura);
-  color: white;
-  border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  font-weight: 700;
+  gap: 8px;
 }
 
-/* ============ בחירת מצביעה ============ */
+.intro p {
+  font-size: 14px;
+  color: var(--sumi);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+.intro p strong {
+  color: var(--matcha-dark);
+}
+
+/* VOTER */
 .voter-selector {
   max-width: 700px;
   margin: 0 auto 20px;
@@ -265,24 +247,24 @@ html, body {
 .voter-tab[data-voter="stav"] .avatar { background: #5d8a5e; }
 .voter-tab[data-voter="eran"] .avatar { background: #1e3a5f; }
 
-/* ============ כותרת יום ============ */
-.day-header {
+/* CITY HEADER */
+.city-header {
   max-width: 700px;
-  margin: 40px auto 20px;
+  margin: 36px auto 16px;
   padding: 0 20px;
 }
 
-.day-header-inner {
+.city-header-inner {
   background: linear-gradient(135deg, var(--indigo) 0%, #2d4766 100%);
   color: white;
-  padding: 20px 24px;
+  padding: 18px 22px;
   border-radius: 14px;
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(30, 58, 95, 0.25);
 }
 
-.day-header-inner::before {
+.city-header-inner::before {
   content: '';
   position: absolute;
   top: -20px;
@@ -294,7 +276,7 @@ html, body {
   border-radius: 50%;
 }
 
-.day-header-inner .kanji {
+.city-header-inner .kanji {
   font-family: 'Noto Serif JP', serif;
   font-size: 14px;
   color: var(--gold);
@@ -302,21 +284,21 @@ html, body {
   margin-bottom: 4px;
 }
 
-.day-header-inner h2 {
-  font-size: 22px;
+.city-header-inner h2 {
+  font-size: 20px;
   font-weight: 700;
   margin-bottom: 4px;
 }
 
-.day-header-inner .date {
+.city-header-inner .desc {
   font-size: 13px;
   opacity: 0.85;
 }
 
-/* ============ כרטיס פעילות ============ */
+/* ACTIVITY CARD */
 .activity {
   max-width: 700px;
-  margin: 16px auto;
+  margin: 14px auto;
   padding: 0 20px;
 }
 
@@ -326,11 +308,6 @@ html, body {
   overflow: hidden;
   box-shadow: 0 4px 16px var(--shadow);
   transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.activity-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
 .activity-img-wrap {
@@ -423,6 +400,7 @@ html, body {
 .tag-cost { background: #fef3e2; color: #a06c15; }
 .tag-time { background: #e8e4f9; color: #4a3d8f; }
 .tag-type { background: #e3f0e4; color: #2d5030; }
+.tag-bonus { background: #ffe3ec; color: #b73b4f; }
 
 .activity-link {
   display: inline-block;
@@ -440,7 +418,7 @@ html, body {
   background: #d6e1ef;
 }
 
-/* ============ דירוג כוכבים ============ */
+/* RATING */
 .rating-section {
   padding-top: 16px;
   border-top: 1px solid var(--line);
@@ -490,16 +468,6 @@ html, body {
   text-shadow: 0 0 12px rgba(193, 154, 58, 0.4);
 }
 
-.star.current-user-filled {
-  animation: pop 0.3s ease;
-}
-
-@keyframes pop {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.3); }
-  100% { transform: scale(1); }
-}
-
 .all-voters-row {
   display: flex;
   justify-content: space-around;
@@ -532,41 +500,85 @@ html, body {
   font-weight: 400;
 }
 
-/* ============ מפה ============ */
-.map-section {
-  max-width: 700px;
-  margin: 40px auto;
-  padding: 0 20px;
+/* CONFIRMED ITINERARY SECTION */
+.confirmed-section {
+  background: linear-gradient(180deg, #f3f8f0 0%, var(--paper) 100%);
+  padding: 40px 20px;
+  margin-top: 40px;
 }
 
-.map-section h2 {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--ink);
-  margin-bottom: 14px;
+.confirmed-inner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.confirmed-section h2 {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--matcha-dark);
+  margin-bottom: 8px;
   text-align: center;
 }
 
-.map-subtitle {
-  font-size: 13px;
+.confirmed-section > .confirmed-inner > p {
+  font-size: 14px;
   color: var(--mist);
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
-.map-embed {
-  width: 100%;
-  aspect-ratio: 4/3;
-  border: 0;
-  border-radius: 14px;
-  box-shadow: 0 4px 20px var(--shadow);
+.confirmed-day {
+  background: var(--paper-card);
+  border-radius: 12px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px var(--shadow);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
 }
 
-/* ============ סיכום סופי ============ */
+.confirmed-day-num {
+  background: var(--matcha);
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.confirmed-day-info {
+  flex: 1;
+}
+
+.confirmed-day-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+
+.confirmed-day-date {
+  font-size: 11px;
+  color: var(--mist);
+  margin-bottom: 6px;
+}
+
+.confirmed-day-activities {
+  font-size: 12px;
+  color: var(--sumi);
+  line-height: 1.5;
+}
+
+/* SUMMARY */
 .summary-section {
   background: linear-gradient(180deg, #fef8e8 0%, var(--paper) 100%);
   padding: 50px 20px;
-  margin-top: 40px;
 }
 
 .summary-inner {
@@ -575,7 +587,7 @@ html, body {
 }
 
 .summary-section h2 {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 800;
   color: var(--ink);
   margin-bottom: 8px;
@@ -583,24 +595,24 @@ html, body {
 }
 
 .summary-section > .summary-inner > p {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--mist);
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 }
 
 .summary-group {
   background: var(--paper-card);
   border-radius: 14px;
-  padding: 20px;
-  margin-bottom: 20px;
+  padding: 18px;
+  margin-bottom: 16px;
   box-shadow: 0 2px 12px var(--shadow);
 }
 
 .summary-group h3 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -612,28 +624,26 @@ html, body {
 .summary-group.unrated h3 { color: var(--mist); }
 
 .summary-item {
-  padding: 12px;
+  padding: 10px 12px;
   border-radius: 10px;
   background: var(--rice);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
 }
 
-.summary-item-left {
-  flex: 1;
-}
+.summary-item-left { flex: 1; }
 
 .summary-item-title {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--sumi);
 }
 
 .summary-item-day {
-  font-size: 11px;
+  font-size: 10px;
   color: var(--mist);
   margin-top: 2px;
 }
@@ -642,36 +652,32 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 4px;
+  gap: 2px;
 }
 
 .summary-avg {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 800;
   color: var(--gold);
   line-height: 1;
 }
 
 .summary-detail {
-  font-size: 10px;
+  font-size: 9px;
   color: var(--mist);
   display: flex;
-  gap: 6px;
-}
-
-.summary-detail span {
-  display: inline-block;
+  gap: 4px;
 }
 
 .empty-state {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--mist);
   text-align: center;
-  padding: 20px;
+  padding: 14px;
   font-style: italic;
 }
 
-/* ============ פעולות ============ */
+/* ACTIONS */
 .actions {
   max-width: 700px;
   margin: 30px auto;
@@ -683,7 +689,7 @@ html, body {
 
 .action-btn {
   flex: 1;
-  min-width: 140px;
+  min-width: 130px;
   padding: 14px;
   border: none;
   border-radius: 10px;
@@ -694,44 +700,21 @@ html, body {
   transition: all 0.2s;
 }
 
-.btn-primary {
-  background: var(--matcha);
-  color: white;
-}
+.btn-primary { background: var(--matcha); color: white; }
+.btn-primary:hover { background: var(--matcha-dark); }
+.btn-secondary { background: var(--rice); color: var(--sumi); }
+.btn-secondary:hover { background: #e5ddc8; }
+.btn-danger { background: #fce4e4; color: var(--sakura-dark); }
+.btn-danger:hover { background: #f5cfcf; }
 
-.btn-primary:hover {
-  background: var(--matcha-dark);
-}
-
-.btn-secondary {
-  background: var(--rice);
-  color: var(--sumi);
-}
-
-.btn-secondary:hover {
-  background: #e5ddc8;
-}
-
-.btn-danger {
-  background: #fce4e4;
-  color: var(--sakura-dark);
-}
-
-.btn-danger:hover {
-  background: #f5cfcf;
-}
-
-/* ============ footer ============ */
 footer {
   text-align: center;
   padding: 30px 20px;
   font-size: 12px;
-  color: var(--mist);
   background: var(--sumi);
   color: #a8a8a0;
 }
 
-/* ============ modal לשיתוף ============ */
 .toast {
   position: fixed;
   bottom: 30px;
@@ -755,11 +738,10 @@ footer {
   transform: translateX(-50%) translateY(0);
 }
 
-/* Mobile tweaks */
 @media (max-width: 520px) {
-  .hero { padding: 40px 16px 35px; }
-  .hero-kanji { font-size: 60px; }
-  .hero h1 { font-size: 28px; }
+  .hero { padding: 36px 16px 30px; }
+  .hero-kanji { font-size: 50px; }
+  .hero h1 { font-size: 24px; }
   .activity { padding: 0 12px; }
   .activity-body { padding: 16px; }
   .star { font-size: 32px; }
@@ -768,37 +750,35 @@ footer {
 </head>
 <body>
 
-<!-- ============ HERO ============ -->
+<!-- HERO -->
 <header class="hero">
-  <div class="hero-kanji">日本</div>
+  <div class="hero-badge">גרסה 2 · רק חדש</div>
+  <div class="hero-kanji">追加</div>
   <h1>טיול יפן</h1>
-  <div class="hero-dates">6 עד 17 בינואר 2027</div>
-  <div class="hero-travelers">ערן · לינוי (18) · סתיו (14)</div>
+  <div class="hero-subtitle">8 פעילויות חדשות לדירוג</div>
+  <div class="hero-travelers">ערן · לינוי · סתיו</div>
 </header>
 
-<!-- ============ פרוגרס בר ============ -->
+<!-- PROGRESS -->
 <div class="progress-container">
   <div class="progress-bar">
     <span class="progress-text">דורגו</span>
     <div class="progress-track">
       <div class="progress-fill" id="progressFill"></div>
     </div>
-    <span class="progress-count" id="progressCount">0/32</span>
+    <span class="progress-count" id="progressCount">0/8</span>
   </div>
 </div>
 
-<!-- ============ הוראות ============ -->
-<div class="instructions">
-  <h2>איך זה עובד</h2>
-  <ol>
-    <li>כל אחד בוחר את עצמו למעלה ומדרג בנפרד את כל הפעילויות.</li>
-    <li>לוחצים על הכוכבים כדי לדרג (אפשר לראות תמונות ומפה של כל מקום).</li>
-    <li>הדירוגים נשמרים אוטומטית במכשיר — אפשר לצאת ולחזור.</li>
-    <li>בסוף העמוד יש סיכום חי שמתעדכן: ממוצע של כל פעילות ומה נכנס למסלול.</li>
-  </ol>
+<!-- INTRO -->
+<div class="intro">
+  <h2>🎌 מה חדש כאן</h2>
+  <p>זיהיתי מהדירוגים הקודמים שלכם ש<strong>אהבתם חוויות עם פעולה, חיות, ושווקים</strong> — ופחות התלהבתם ממקדשים סטנדרטיים, תצפיות, ומוזיאונים.</p>
+  <p>הוספתי <strong>8 פעילויות חדשות</strong> שמתאימות בדיוק לטעם הזה: בית קפה של פוקימון, ינשופים שמסתכלים עליכם מקרוב, פארק של 130 קופים חופשיים, אקווריום ענק, וכמה הפתעות.</p>
+  <p>בנוסף, יש בסוף <strong>תקציר של המסלול הסופי</strong> שכבר נסגר על בסיס הדירוגים שלכם.</p>
 </div>
 
-<!-- ============ בחירת מצביעה ============ -->
+<!-- VOTER -->
 <div class="voter-selector">
   <h3>מי מדרג עכשיו?</h3>
   <div class="voter-tabs">
@@ -814,29 +794,120 @@ footer {
   </div>
 </div>
 
-<!-- ============ הפעילויות ייטענו פה דינמית ============ -->
 <div id="activitiesContainer"></div>
 
-<!-- ============ מפה ============ -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<!-- CONFIRMED ITINERARY -->
+<div class="confirmed-section">
+  <div class="confirmed-inner">
+    <h2>✅ המסלול שכבר אושר</h2>
+    <p>11 לילות · על בסיס הדירוגים שלכם בגרסה 1</p>
+    
+    <div class="confirmed-day">
+      <div class="confirmed-day-num">1</div>
+      <div class="confirmed-day-info">
+        <div class="confirmed-day-title">חמישי 7/1 · הגעה לטוקיו</div>
+        <div class="confirmed-day-date">לילה ראשון בשינג'וקו</div>
+        <div class="confirmed-day-activities">🍜 ארוחת ערב Ichiran Ramen</div>
+      </div>
+    </div>
 
-<div class="map-section">
-  <h2>🗺️ מסלול הטיול</h2>
-  <p class="map-subtitle">11 לילות · 5 ערים · לחץ על סימן לפרטים</p>
-  <div id="tripMap" class="map-embed" style="background: var(--rice);"></div>
-  <p style="text-align:center; margin-top: 14px; font-size: 13px;">
-    <a href="https://www.google.com/maps/dir/Narita+International+Airport/Shibuya,+Tokyo/GALA+Yuzawa+Ski+Resort/Hakone+Shrine/Meiji+Jingu,+Tokyo/Kiyomizu-dera,+Kyoto/Nara+Park/Dotonbori,+Osaka/Universal+Studios+Japan/Narita+International+Airport" target="_blank" style="color: var(--indigo); text-decoration: none; font-weight: 500; display: inline-block; padding: 10px 20px; background: var(--rice); border-radius: 10px;">
-      📍 פתח מסלול ב-Google Maps
-    </a>
-  </p>
+    <div class="confirmed-day">
+      <div class="confirmed-day-num">2</div>
+      <div class="confirmed-day-info">
+        <div class="confirmed-day-title">שישי 8/1 · טוקיו</div>
+        <div class="confirmed-day-date">שיבויה והארג'וקו</div>
+        <div class="confirmed-day-activities">⛩️ Meiji Jingu · 🍭 Takeshita Street · 👗 Cat Street</div>
+      </div>
+    </div>
+
+    <div class="confirmed-day">
+      <div class="confirmed-day-num">3</div>
+      <div class="confirmed-day-info">
+        <div class="confirmed-day-title">שבת 9/1 · קרואיזאווה ⛷️</div>
+        <div class="confirmed-day-date">לילה ראשון מחוץ לטוקיו</div>
+        <div class="confirmed-day-activities">⛷️ יום סקי + לילה במלון Hotel Grand Vert ליד התחנה</div>
+      </div>
+    </div>
+
+    <div class="confirmed-day">
+      <div class="confirmed-day-num">4</div>
+      <div class="confirmed-day-info">
+        <div class="confirmed-day-title">ראשון 10/1 · האקונה ♨️</div>
+        <div class="confirmed-day-date">לילה בריוקאן Tensui Saryo</div>
+        <div class="confirmed-day-activities">🚂 Tozan Railway · 🗿 מוזיאון פסלים · 🌋 Owakudani · ⛩️ שער הטורי במים · ♨️ אונסן וקייסקי</div>
+      </div>
+    </div>
+
+    <div class="confirmed-day">
+      <div class="confirmed-day-num">5</div>
+      <div class="confirmed-day-info">
+        <div class="confirmed-day-title">שני 11/1 · חג הבגרות 👘</div>
+        <div class="confirmed-day-date">חזרה לטוקיו · אירוע נדיר!</div>
+        <div class="confirmed-day-activities">👘 חג הבגרות בשיבויה · 🌸 Hatsumode במייג'י ג'ינגו · 🏯 Senso-ji ואסאקוסה · 🥞 Monjayaki</div>
+      </div>
+    </div>
+
+    <div class="confirmed-day">
+      <div class="confirmed-day-num">6</div>
+      <div class="confirmed-day-info">
+        <div class="confirmed-day-title">שלישי 12/1 · בדרך לקיוטו</div>
+        <div class="confirmed-day-date">שינקאנסן עם נוף לפוג'י</div>
+        <div class="confirmed-day-activities">🌊 TeamLab Planets · 🚄 שינקאנסן לקיוטו (מושב D ימני)</div>
+      </div>
+    </div>
+
+    <div class="confirmed-day">
+      <div class="confirmed-day-num">7</div>
+      <div class="confirmed-day-info">
+        <div class="confirmed-day-title">רביעי 13/1 · קיוטו ⚔️</div>
+        <div class="confirmed-day-date">יום מקדשים וסמוראים</div>
+        <div class="confirmed-day-activities">🏯 Kiyomizu-dera · ⚔️ שיעור סמוראי · 🏛️ Kinkaku-ji בשקיעה · 🍣 שוק Nishiki</div>
+      </div>
+    </div>
+
+    <div class="confirmed-day">
+      <div class="confirmed-day-num">8</div>
+      <div class="confirmed-day-info">
+        <div class="confirmed-day-title">חמישי 14/1 · נארה 🦌</div>
+        <div class="confirmed-day-date">יום טיול מקיוטו</div>
+        <div class="confirmed-day-activities">🦌 פארק האיילים · 🛕 Todai-ji בודהה הגדול</div>
+      </div>
+    </div>
+
+    <div class="confirmed-day">
+      <div class="confirmed-day-num">9</div>
+      <div class="confirmed-day-info">
+        <div class="confirmed-day-title">שישי 15/1 · אוסקה 🐙</div>
+        <div class="confirmed-day-date">יום עמוס בעיר</div>
+        <div class="confirmed-day-activities">🏯 טירת אוסקה · 🐙 טאקויאקי ב-Wanaka · 🌃 דוטונבורי בלילה</div>
+      </div>
+    </div>
+
+    <div class="confirmed-day">
+      <div class="confirmed-day-num">10</div>
+      <div class="confirmed-day-info">
+        <div class="confirmed-day-title">שבת 16/1 · אוסקה → טוקיו</div>
+        <div class="confirmed-day-date">חוזרים לטוקיו (במקום USJ)</div>
+        <div class="confirmed-day-activities">🐳 אקווריום Kaiyukan + פעילויות חדשות שבחרתם · 🚄 שינקאנסן לטוקיו</div>
+      </div>
+    </div>
+
+    <div class="confirmed-day">
+      <div class="confirmed-day-num">11</div>
+      <div class="confirmed-day-info">
+        <div class="confirmed-day-title">ראשון 17/1 · יום קניות אחרון 🛍️</div>
+        <div class="confirmed-day-date">קניות מרוכזות לפני הטיסה</div>
+        <div class="confirmed-day-activities">📚 אקיהברה (Animate + Mandarake) · 🛍️ Don Quijote · 🐟 שוק Tsukiji</div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- ============ סיכום ============ -->
+<!-- SUMMARY OF NEW ACTIVITIES -->
 <div class="summary-section">
   <div class="summary-inner">
-    <h2>📊 סיכום הדירוגים</h2>
-    <p>הפעילויות מסודרות לפי הממוצע של שלושתכם</p>
+    <h2>📊 דירוג הפעילויות החדשות</h2>
+    <p>מתעדכן בזמן אמת לפי הצבעות שלושתכם</p>
     
     <div class="summary-group winners">
       <h3>✨ נכנס למסלול (ממוצע 4 ומעלה)</h3>
@@ -849,7 +920,7 @@ footer {
     </div>
 
     <div class="summary-group losers">
-      <h3>❌ לא נכנס למסלול (ממוצע מתחת ל-3)</h3>
+      <h3>❌ לא נכנס (ממוצע מתחת ל-3)</h3>
       <div id="losersContainer"></div>
     </div>
 
@@ -860,7 +931,7 @@ footer {
   </div>
 </div>
 
-<!-- ============ פעולות ============ -->
+<!-- ACTIONS -->
 <div class="actions">
   <button class="action-btn btn-primary" onclick="shareResults()">📤 שתף סיכום</button>
   <button class="action-btn btn-secondary" onclick="exportResults()">💾 הורד תוצאות</button>
@@ -868,577 +939,160 @@ footer {
 </div>
 
 <footer>
-  <p>טיול יפן · ינואר 2027 · הדירוגים נשמרים במכשיר שלך בלבד</p>
+  <p>טיול יפן · ינואר 2027 · גרסה 2 · הדירוגים נשמרים במכשיר שלך</p>
 </footer>
 
 <div class="toast" id="toast"></div>
 
 <script>
-// ============ נתוני הפעילויות ============
+// ============ הפעילויות החדשות בלבד ============
 const ACTIVITIES = [
-  // יום 1 - הגעה
+  // טוקיו - 5 חדשות
   {
-    id: 'ichiran',
-    day: 'יום 1',
-    dayTitle: 'חמישי 7/1 · הגעה',
-    dayColor: '#1e3a5f',
-    time: 'ערב',
-    emoji: '🍜',
-    title: 'Ichiran Ramen',
-    subtitle: 'ארוחת ערב ראשונה בטוקיו',
-    desc: 'רשת רמן מפורסמת עם חוויית ״אכילה בתאים פרטיים״. יוצקים רמן טונקוצו מהדלפק, תפריט באנגלית, חוויה ייחודית שמתאימה לערב ראשון עייף.',
-    cost: '₪120',
-    duration: 'שעה',
-    type: 'אוכל',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Ichiran_ramen_shop.jpg/800px-Ichiran_ramen_shop.jpg',
-    search: 'Ichiran Ramen Shibuya private booth'
-  },
-  // יום 2 - טוקיו
-  {
-    id: 'shibuya_sky',
-    day: 'יום 2',
-    dayTitle: 'שישי 8/1 · טוקיו',
-    dayColor: '#e8546a',
-    time: '10:00',
-    emoji: '🌆',
-    title: 'Shibuya Sky — תצפית 360',
-    subtitle: 'קומה 46, תצפית פתוחה עם נוף להר פוג׳י',
-    desc: 'התצפית הטובה ביותר בטוקיו. חלק חיצוני פתוח לגמרי, מבט פנורמי על העיר ובימים בהירים גם להר פוג׳י. הזמנה חובה מראש.',
-    cost: '₪210',
+    id: 'pokemon_cafe',
+    city: 'טוקיו',
+    cityKanji: '東京',
+    cityColor: '#e8546a',
+    suggested_for: 'יום 2 או יום 11',
+    emoji: '🎮',
+    title: 'Pokémon Café — ניהונבאשי',
+    subtitle: 'בית קפה רשמי של פוקימון',
+    desc: 'בית קפה תמטי עם דמויות פוקימון בגודל אמיתי. עוגות בצורת פיקאצ׳ו, המבורגרים מעוצבים, פיקאצ׳ו ענק שרוקד בתוך הקפה כל חצי שעה. תפריט עונתי שמתחלף. הזמנה חובה חודש מראש דרך האתר הרשמי.',
+    cost: '₪400 למשפחה',
     duration: '90 דק׳',
-    type: 'תצפית',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Shibuya_Scramble_Square%2C_Shibuya_Sky_201911d.jpg/800px-Shibuya_Scramble_Square%2C_Shibuya_Sky_201911d.jpg',
-    search: 'Shibuya Sky observation deck Tokyo'
+    type: 'חוויה תמטית',
+    bonus: 'ייחודי לטוקיו',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Pokemon_Cafe_Tokyo.jpg/800px-Pokemon_Cafe_Tokyo.jpg',
+    search: 'Pokemon Cafe Tokyo Nihonbashi'
   },
   {
-    id: 'cat_street',
-    day: 'יום 2',
-    dayTitle: 'שישי 8/1 · טוקיו',
-    dayColor: '#e8546a',
-    time: '12:00',
-    emoji: '👗',
-    title: 'Cat Street',
-    subtitle: 'רחוב האופנה של נוער טוקיו המקומי',
-    desc: 'שני רחובות בין שיבויה להארג׳וקו שם נוער טוקיו האמיתי קונה. חנויות וינטאג׳ WEGO ו-Flamingo, בוטיקים של מעצבים מקומיים ב-Ragtag.',
-    cost: 'חופשי',
-    duration: '90 דק׳',
-    type: 'שופינג',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Cat_Street%2C_Harajuku%2C_Tokyo.jpg/800px-Cat_Street%2C_Harajuku%2C_Tokyo.jpg',
-    search: 'Cat Street Harajuku Tokyo'
-  },
-  {
-    id: 'takeshita',
-    day: 'יום 2',
-    dayTitle: 'שישי 8/1 · טוקיו',
-    dayColor: '#e8546a',
-    time: '15:00',
-    emoji: '🍭',
-    title: 'Takeshita Street',
-    subtitle: 'בירת תרבות הנוער',
-    desc: 'רחוב הולכי רגל צפוף של 400 מטרים, חנויות kawaii, קרפים צבעוניים, אוכל רחוב. תיירותי קלאסי אבל שווה 30 דק׳. קרפ מ-Marion Crepes.',
-    cost: '₪50',
-    duration: '30 דק׳',
-    type: 'חוויה קלאסית',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Takeshita_street_2016.jpg/800px-Takeshita_street_2016.jpg',
-    search: 'Takeshita Street Harajuku crepes'
-  },
-  {
-    id: 'meiji_day2',
-    day: 'יום 2',
-    dayTitle: 'שישי 8/1 · טוקיו',
-    dayColor: '#e8546a',
-    time: '16:00',
-    emoji: '⛩️',
-    title: 'Meiji Jingu',
-    subtitle: 'מקדש שינטו בלב יער עירוני',
-    desc: 'מקדש שינטו ענק בתוך יער של 700 דונם במרכז טוקיו. שער טורי ענק, שביל יערי של 10 דקות, מקדש מסורתי שחור-אדום.',
-    cost: 'חינם',
+    id: 'owl_cafe',
+    city: 'טוקיו',
+    cityKanji: '東京',
+    cityColor: '#e8546a',
+    suggested_for: 'יום 11 (לפני אקיהברה)',
+    emoji: '🦉',
+    title: 'Akiba Fukurou — בית קפה ינשופים',
+    subtitle: 'הקפה האתי הכי מומלץ בטוקיו',
+    desc: 'באקיהברה. נכנסים בקבוצות קטנות, הצוות מסביר על כל ינשוף בנפרד. אפשר להחזיק אותם על היד, לטף בעדינות, לצלם. הינשופים מקבלים מנוחה בין הקבוצות. כניסה רק עם הזמנה. 60 דקות.',
+    cost: '₪90 לאדם',
     duration: '60 דק׳',
-    type: 'תרבות',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Meiji-jingu_Torii_Gate.jpg/800px-Meiji-jingu_Torii_Gate.jpg',
-    search: 'Meiji Jingu shrine Tokyo forest'
+    type: 'חיות מיוחדות',
+    bonus: 'אתי ובטוח',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Owl_cafe_Tokyo.jpg/800px-Owl_cafe_Tokyo.jpg',
+    search: 'Akiba Fukurou owl cafe Tokyo'
   },
   {
-    id: 'karaoke',
-    day: 'יום 2',
-    dayTitle: 'שישי 8/1 · טוקיו',
-    dayColor: '#e8546a',
-    time: '19:00',
-    emoji: '🎤',
-    title: 'BanBan Karaoke',
-    subtitle: 'חדר פרטי — ערב הבנות',
-    desc: 'רשת קריוקי פחות תיירותית מ-Big Echo. חדרים פרטיים, אלפי שירים באנגלית, ק-פופ, פופ אמריקאי. 1,500 יין לאדם לשעתיים.',
-    cost: '₪135',
-    duration: '2-3 שעות',
-    type: 'בידור',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Karaoke_Japan.jpg/800px-Karaoke_Japan.jpg',
-    search: 'karaoke private room Japan Tokyo'
+    id: 'pokemon_center',
+    city: 'טוקיו',
+    cityKanji: '東京',
+    cityColor: '#e8546a',
+    suggested_for: 'יום 11 (אחרי Don Quijote)',
+    emoji: '⚡',
+    title: 'Pokémon Center DX',
+    subtitle: 'החנות הגדולה — פיקאצ׳ו ענק בכניסה',
+    desc: 'בנייני Takashimaya. פיקאצ׳ו ענק מקבל את פניכם, אלפי מוצרי פוקימון רשמיים, פלאשים בגדלים שונים, מוצרים בלעדיים שלא מוכרים בשום מקום אחר. בית קפה Pikachu Sweets צמוד עם משקאות בצורת פוקימון.',
+    cost: 'חינם כניסה',
+    duration: '60 דק׳',
+    type: 'שופינג ייחודי',
+    bonus: 'מתנות מצוינות',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Pokemon_Center_Tokyo_DX.jpg/800px-Pokemon_Center_Tokyo_DX.jpg',
+    search: 'Pokemon Center DX Tokyo Nihonbashi'
   },
   {
-    id: 'zoetrope',
-    day: 'יום 2',
-    dayTitle: 'שישי 8/1 · טוקיו',
-    dayColor: '#e8546a',
-    time: '22:00',
-    emoji: '🥃',
-    title: 'Zoetrope — בר ויסקי',
-    subtitle: 'הלילה שלך (לבד)',
-    desc: 'בר בקומה 3 בשינג׳וקו עם סלקטה של 400 ויסקי יפני. הבעל מומחה, דובר אנגלית, מסביר על כל בקבוק. אווירה אינטימית.',
-    cost: '₪150',
-    duration: '90 דק׳',
-    type: 'לילה אישי',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Japanese_whisky_bar.jpg/800px-Japanese_whisky_bar.jpg',
-    search: 'Zoetrope whisky bar Shinjuku'
-  },
-  // יום 3 - סקי
-  {
-    id: 'gala_ski',
-    day: 'יום 3',
-    dayTitle: 'שבת 9/1 · סקי',
-    dayColor: '#4a90d9',
-    time: 'כל היום',
-    emoji: '⛷️',
-    title: 'GALA Yuzawa — יום סקי',
-    subtitle: 'אתר סקי 77 דק׳ משינקאנסן מטוקיו',
-    desc: 'יום שלג וסקי מלא! תחנה מחוברת ישירות לרכבל. שיעורי סקי למתחילים באנגלית, סנופארק להשכבה ומזחלת, אונסן חם בסוף היום. אפשר גם בלי סקי.',
-    cost: '₪3,820',
-    duration: 'יום מלא',
-    type: 'חוויית שלג',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Gala_Yuzawa_Snow_Resort.jpg/800px-Gala_Yuzawa_Snow_Resort.jpg',
-    search: 'GALA Yuzawa ski resort Japan snow'
-  },
-  // יום 4 - האקונה
-  {
-    id: 'hakone_tozan',
-    day: 'יום 4',
-    dayTitle: 'ראשון 10/1 · האקונה',
-    dayColor: '#5d8a5e',
-    time: 'בוקר',
-    emoji: '🚂',
-    title: 'Hakone Tozan Railway',
-    subtitle: 'רכבת הרים עם switchback',
-    desc: 'רכבת קטנה שעולה במעלות חדים דרך יער עבות. עושה switchback - עוצרת ומחליפה כיוון 3 פעמים כדי לטפס. חוויה ייחודית בעולם.',
-    cost: 'כלול ב-Freepass',
-    duration: '40 דק׳',
-    type: 'חוויית נסיעה',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Hakone_Tozan_Line.jpg/800px-Hakone_Tozan_Line.jpg',
-    search: 'Hakone Tozan Railway switchback'
-  },
-  {
-    id: 'open_air_museum',
-    day: 'יום 4',
-    dayTitle: 'ראשון 10/1 · האקונה',
-    dayColor: '#5d8a5e',
-    time: 'אחה״צ',
-    emoji: '🗿',
-    title: 'מוזיאון הפסלים הפתוח',
-    subtitle: '120 פסלים בטבע פתוח',
-    desc: 'מוזיאון אמנות חיצוני של 70 דונם עם 120 פסלים. אזור של 300 יצירות פיקסו. אמבט רגליים חם תחת כיפת השמיים. Symphonic Sculpture - מגדל עם וויטראז׳ים.',
-    cost: '₪135',
-    duration: '90 דק׳',
-    type: 'אמנות',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Hakone_Open-Air_Museum.jpg/800px-Hakone_Open-Air_Museum.jpg',
-    search: 'Hakone Open Air Museum sculpture'
-  },
-  {
-    id: 'owakudani',
-    day: 'יום 4',
-    dayTitle: 'ראשון 10/1 · האקונה',
-    dayColor: '#5d8a5e',
-    time: 'אחה״צ',
-    emoji: '🌋',
-    title: 'עמק Owakudani',
-    subtitle: 'עמק געשי עם ביצים שחורות',
-    desc: 'אזור געשי עם אדי גופרית שעולים מהאדמה. ביצים שחורות מבושלות במעיינות הגופרית - האגדה אומרת שכל ביצה מוסיפה 7 שנים לחיים.',
-    cost: '₪50',
-    duration: '45 דק׳',
-    type: 'תופעת טבע',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Owakudani_Hakone_Japan.jpg/800px-Owakudani_Hakone_Japan.jpg',
-    search: 'Owakudani volcanic valley Hakone'
-  },
-  {
-    id: 'lake_ashi',
-    day: 'יום 4',
-    dayTitle: 'ראשון 10/1 · האקונה',
-    dayColor: '#5d8a5e',
-    time: 'אחה״צ',
-    emoji: '⛵',
-    title: 'שייט על אגם Ashi',
-    subtitle: 'ספינת שודדי ים עם נוף להר פוג׳י',
-    desc: 'הפלגה של 30 דקות בספינה מעוצבת כספינת שודדי ים. בימים בהירים נוף פנורמי להר פוג׳י מעל האגם. אחד המראות האיקוניים של יפן.',
-    cost: 'כלול',
+    id: 'shibuya_crossing',
+    city: 'טוקיו',
+    cityKanji: '東京',
+    cityColor: '#e8546a',
+    suggested_for: 'יום 2 (לפני Cat Street)',
+    emoji: '🚶',
+    title: 'Shibuya Crossing + פסל Hachiko',
+    subtitle: 'מעבר החצייה הכי עמוס בעולם',
+    desc: '3,000 אנשים חוצים בכל מחזור רמזור. תוכלו לעבור אותו, לראות אותו מ-Starbucks למעלה (חינם!), ולפגוש את פסל הכלב Hachiko — סיפור אמיתי על נאמנות שמרגש את כולם. 30 דקות, פעולה ייחודית של טוקיו.',
+    cost: 'חינם',
     duration: '30 דק׳',
-    type: 'נוף איקוני',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Mt_Fuji_and_Lake_Ashi.jpg/800px-Mt_Fuji_and_Lake_Ashi.jpg',
-    search: 'Lake Ashi pirate ship Hakone'
+    type: 'חוויה איקונית',
+    bonus: 'תמונה לאינסטגרם',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Shibuya_Crossing_at_night.jpg/800px-Shibuya_Crossing_at_night.jpg',
+    search: 'Shibuya crossing scramble Hachiko'
   },
   {
-    id: 'hakone_shrine',
-    day: 'יום 4',
-    dayTitle: 'ראשון 10/1 · האקונה',
-    dayColor: '#5d8a5e',
-    time: 'שקיעה',
-    emoji: '⛩️',
-    title: 'שער הטורי במים',
-    subtitle: 'מקדש האקונה על האגם',
-    desc: 'שער טורי אדום ענק שעומד במי אגם Ashi. המקדש הראשי נמצא ביער עמוק. מקום מיסטי במיוחד בבוקר עם ערפל או בשקיעה.',
-    cost: 'חינם',
-    duration: '45 דק׳',
-    type: 'מקדש איקוני',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Hakone_Shrine_Torii.jpg/800px-Hakone_Shrine_Torii.jpg',
-    search: 'Hakone Shrine torii gate Lake Ashi'
-  },
-  {
-    id: 'ryokan',
-    day: 'יום 4',
-    dayTitle: 'ראשון 10/1 · האקונה',
-    dayColor: '#5d8a5e',
-    time: 'לילה',
-    emoji: '♨️',
-    title: 'לילה בריוקאן Tensui Saryo',
-    subtitle: 'אונסן, קייסקי, יוקטה',
-    desc: 'ריוקאן מסורתי עם אמבטיים פרטיים (kashikiri), ארוחת kaiseki של 9-12 מנות, יוקטה, שינה על פוטון ברצפת טטאמי. חוויה יפנית קלאסית בשיאה.',
-    cost: '₪1,880',
-    duration: 'לילה מלא',
-    type: 'חוויה מסורתית',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Outdoor_onsen.jpg/800px-Outdoor_onsen.jpg',
-    search: 'traditional ryokan onsen Hakone'
-  },
-  // יום 5 - חג הבגרות
-  {
-    id: 'seijin',
-    day: 'יום 5',
-    dayTitle: 'שני 11/1 · חג הבגרות 👘',
-    dayColor: '#d96482',
-    time: '11:00',
-    emoji: '👘',
-    title: 'חג הבגרות — Shibuya',
-    subtitle: 'פסטיבל הקימונו הלאומי',
-    desc: 'אלפי צעירים בני 20 מגיעים לטקס הבגרות לבושים ב-furisode פורמלי. רק פעם בשנה! NHK ו-CNN מצלמים. אירוע נדיר שהזדמנתם בתאריך הנכון.',
-    cost: 'חינם',
+    id: 'sumida_aquarium',
+    city: 'טוקיו',
+    cityKanji: '東京',
+    cityColor: '#e8546a',
+    suggested_for: 'יום 5 (אחרי Senso-ji)',
+    emoji: '🐠',
+    title: 'אקווריום Sumida — בטוקיו סקייטרי',
+    subtitle: 'פינגווינים מקרוב + סוסי ים',
+    desc: 'אקווריום אטמוספרי מתחת לטוקיו סקייטרי. פינגווינים שאפשר לראות מקרוב במים שקופים, סוסי ים, מדוזות זוהרות, אזור לימוד אינטראקטיבי. צמוד לסוקייטרי באסאקוסה - בקלות אחרי Senso-ji.',
+    cost: '₪290 למשפחה',
     duration: '90 דק׳',
-    type: 'אירוע נדיר',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Seijin_no_Hi_kimono.jpg/800px-Seijin_no_Hi_kimono.jpg',
-    search: 'Coming of Age Day Japan kimono'
+    type: 'אקווריום',
+    bonus: 'משולב עם יום אסאקוסה',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Sumida_Aquarium.jpg/800px-Sumida_Aquarium.jpg',
+    search: 'Sumida Aquarium Tokyo Skytree penguins'
   },
+  // קיוטו - 1 חדשה
   {
-    id: 'meiji_hatsumode',
-    day: 'יום 5',
-    dayTitle: 'שני 11/1 · חג הבגרות 👘',
-    dayColor: '#d96482',
-    time: '13:30',
-    emoji: '🌸',
-    title: 'Meiji Jingu ב-Hatsumode',
-    subtitle: 'התפילה הראשונה של השנה',
-    desc: 'עשרות אלפי צעירים מגיעים למקדש לבצע hatsumode. בחג הבגרות יש מאות בקימונו חגיגי. השילוב של הטקס העתיק עם הלבוש המסורתי — מראה שקשה לתאר.',
-    cost: 'חינם',
-    duration: '2 שעות',
-    type: 'רגע היסטורי',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Hatsumode_Meiji_Shrine.jpg/800px-Hatsumode_Meiji_Shrine.jpg',
-    search: 'Meiji Jingu hatsumode kimono'
-  },
-  {
-    id: 'sensoji',
-    day: 'יום 5',
-    dayTitle: 'שני 11/1 · חג הבגרות 👘',
-    dayColor: '#d96482',
-    time: '16:00',
-    emoji: '🏯',
-    title: 'Senso-ji ו-Asakusa',
-    subtitle: 'המקדש העתיק בטוקיו (645 לספירה)',
-    desc: 'המקדש הוותיק בטוקיו. בחג הבגרות המון חגיגי ועממי יותר מ-Meiji Jingu. שער Kaminarimon המפורסם, סמטת Nakamise-dori - 200 מטרים של דוכני אוכל רחוב.',
-    cost: 'חינם',
-    duration: '90 דק׳',
-    type: 'מקדש היסטורי',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Kaminarimon_gate_Senso-ji.jpg/800px-Kaminarimon_gate_Senso-ji.jpg',
-    search: 'Sensoji temple Asakusa lantern'
-  },
-  {
-    id: 'monja',
-    day: 'יום 5',
-    dayTitle: 'שני 11/1 · חג הבגרות 👘',
-    dayColor: '#d96482',
-    time: 'ערב',
-    emoji: '🥞',
-    title: 'Monjayaki באסאקוסה',
-    subtitle: 'מנת הסימן של טוקיו',
-    desc: 'monjayaki - משהו בין חביתה לפנקייק שמכינים על פלטה מול העיניים שלכם. חוויה אינטראקטיבית, הבנות יאהבו. השף מדריך אתכם.',
-    cost: '₪300',
-    duration: '90 דק׳',
-    type: 'אוכל ייחודי',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Monjayaki.jpg/800px-Monjayaki.jpg',
-    search: 'monjayaki Tokyo Asakusa'
-  },
-  // יום 6 - TeamLab ולקיוטו
-  {
-    id: 'teamlab',
-    day: 'יום 6',
-    dayTitle: 'שלישי 12/1 · בדרך לקיוטו',
-    dayColor: '#7e57c2',
-    time: '10:00',
-    emoji: '🌊',
-    title: 'TeamLab Planets',
-    subtitle: 'אמנות דיגיטלית אימרסיבית',
-    desc: 'הולכים יחף במים עמוקים (עד הברכיים) דרך חדרים של דגים דיגיטליים ואורות צבעוניים. חדר של פרחים שנופלים מהתקרה. הבנות יתפעמו ויצלמו לנצח.',
-    cost: '₪325',
-    duration: '90 דק׳',
-    type: 'חוויה דיגיטלית',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/TeamLab_Borderless.jpg/800px-TeamLab_Borderless.jpg',
-    search: 'TeamLab Planets Tokyo immersive'
-  },
-  {
-    id: 'shinkansen',
-    day: 'יום 6',
-    dayTitle: 'שלישי 12/1 · בדרך לקיוטו',
-    dayColor: '#7e57c2',
-    time: '14:30',
-    emoji: '🚄',
-    title: 'שינקאנסן לקיוטו',
-    subtitle: 'צד D ימין לנוף הר פוג׳י',
-    desc: 'רכבת מהירה של 300 קמ״ש, 2:15 שעות נסיעה. מושבים בצד ימין (D) - 45 דקות אחרי היציאה רואים את הר פוג׳י בכל הדרו. ekiben יפני מסורתי על הרכבת.',
-    cost: '₪1,080',
-    duration: '2:15 שעות',
-    type: 'חוויית נסיעה',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Shinkansen_N700A_Mt_Fuji.jpg/800px-Shinkansen_N700A_Mt_Fuji.jpg',
-    search: 'Shinkansen Mt Fuji view'
-  },
-  // יום 7 - קיוטו
-  {
-    id: 'kimono_rental',
-    day: 'יום 7',
-    dayTitle: 'רביעי 13/1 · קיוטו',
-    dayColor: '#7e57c2',
-    time: '09:00',
-    emoji: '👘',
-    title: 'השכרת קימונו ב-Yumeyakata',
-    subtitle: 'הבנות לובשות קימונו ליום שלם',
-    desc: 'מאות קימונו בסגנונות שונים. מומחית מלבישה כל אחת (30 דק׳). אפשר להוסיף סטיילינג שיער (₪60 לאדם). הקימונו נשאר עליהן עד 17:00.',
-    cost: '₪345',
-    duration: '90 דק׳',
-    type: 'חוויה ויזואלית',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Kimono_rental_Kyoto.jpg/800px-Kimono_rental_Kyoto.jpg',
-    search: 'kimono rental Kyoto Yumeyakata'
-  },
-  {
-    id: 'kiyomizu',
-    day: 'יום 7',
-    dayTitle: 'רביעי 13/1 · קיוטו',
-    dayColor: '#7e57c2',
-    time: '11:30',
-    emoji: '🏯',
-    title: 'Kiyomizu-dera',
-    subtitle: 'המקדש האיקוני של קיוטו',
-    desc: 'מקדש בודהיסטי מ-778 על צלע הר עם מרפסת עץ ענקית ללא מסמר אחד. נוף פנורמי על קיוטו. Otowa Waterfall עם 3 זרמי מים לברכות שונות.',
-    cost: '₪36',
-    duration: '90 דק׳',
-    type: 'מקדש איקוני',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Kiyomizu-dera_in_Kyoto-r.jpg/800px-Kiyomizu-dera_in_Kyoto-r.jpg',
-    search: 'Kiyomizu-dera temple Kyoto'
-  },
-  {
-    id: 'samurai',
-    day: 'יום 7',
-    dayTitle: 'רביעי 13/1 · קיוטו',
-    dayColor: '#7e57c2',
-    time: '14:30',
-    emoji: '⚔️',
-    title: 'שיעור סמוראי',
-    subtitle: '90 דק׳ עם חרב אמיתית',
-    desc: 'לובשות האקמה מסורתית. לומדות את הקידה הסמוראית, תנוחות ותנועות עם קאטאנה. חותכות מזרני קש דקים עם חרב חדה (tameshigiri).',
-    cost: '₪570',
-    duration: '90 דק׳',
-    type: 'אמנות לחימה',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Katana_training.jpg/800px-Katana_training.jpg',
-    search: 'samurai sword experience Kyoto'
-  },
-  {
-    id: 'kinkakuji',
-    day: 'יום 7',
-    dayTitle: 'רביעי 13/1 · קיוטו',
-    dayColor: '#7e57c2',
-    time: '16:30',
-    emoji: '🏛️',
-    title: 'Kinkaku-ji בשקיעה',
-    subtitle: 'הפאביליון הזהוב',
-    desc: 'פאביליון מצופה זהב משנת 1397 על אגם. בשעת השקיעה של ינואר (סביב 17:00) עם אולי שלג קל - אחד המראות המיוחדים של יפן.',
-    cost: '₪45',
-    duration: '45 דק׳',
-    type: 'מקדש איקוני',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Kinkaku-ji_the_Golden_Temple_in_Kyoto_overlooking_the_lake_-_high_rez.JPG/800px-Kinkaku-ji_the_Golden_Temple_in_Kyoto_overlooking_the_lake_-_high_rez.JPG',
-    search: 'Kinkaku-ji Golden Pavilion Kyoto'
-  },
-  {
-    id: 'nishiki',
-    day: 'יום 7',
-    dayTitle: 'רביעי 13/1 · קיוטו',
-    dayColor: '#7e57c2',
-    time: '19:00',
-    emoji: '🍣',
-    title: 'שוק Nishiki',
-    subtitle: 'המטבח של קיוטו — 400 שנה',
-    desc: '130 דוכנים ומסעדות בסמטה מקורה. Aritsugu - חנות סכינים מ-1560, דוכן מוצ׳י טרי, סשימי על מקל כמו גלידה. אוכל ברמה גבוהה.',
-    cost: '₪250',
-    duration: '90 דק׳',
-    type: 'שוק אוכל',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Nishiki_Market_Kyoto.jpg/800px-Nishiki_Market_Kyoto.jpg',
-    search: 'Nishiki Market Kyoto food'
-  },
-  // יום 8 - נארה
-  {
-    id: 'nara_deer',
-    day: 'יום 8',
-    dayTitle: 'חמישי 14/1 · נארה',
-    dayColor: '#6fa878',
-    time: 'בוקר',
-    emoji: '🦌',
-    title: 'פארק האיילים',
-    subtitle: '1,200 איילים מקודשים שיודעים לקרוד',
-    desc: 'פארק ענק עם 1,200 איילים חופשיים שנחשבים מקודשים. יודעים להשתחוות לתיירים תמורת ביסקוויטים. חוויה ייחודית בעולם שהבנות יזכרו לנצח.',
-    cost: '₪20',
-    duration: '90 דק׳',
-    type: 'חיות',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Deer_in_Nara_Park.jpg/800px-Deer_in_Nara_Park.jpg',
-    search: 'Nara deer park bow'
-  },
-  {
-    id: 'todaiji',
-    day: 'יום 8',
-    dayTitle: 'חמישי 14/1 · נארה',
-    dayColor: '#6fa878',
-    time: 'צהריים',
-    emoji: '🛕',
-    title: 'Todai-ji — בודהה הגדול',
-    subtitle: 'פסל ברונזה של 15 מטר',
-    desc: 'מקדש בודהיסטי מ-752. בניין העץ הגדול בעולם במשך 1,200 שנה. בפנים פסל בודהה ברונזה של 15 מטר - הגדול בעולם. ״חור הבודהה״ - עמוד עם חור לעבור בו.',
-    cost: '₪54',
-    duration: '90 דק׳',
-    type: 'מקדש היסטורי',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Todai-ji_Kon-do.jpg/800px-Todai-ji_Kon-do.jpg',
-    search: 'Todai-ji Great Buddha Nara'
-  },
-  // יום 9 - אוסקה
-  {
-    id: 'osaka_castle',
-    day: 'יום 9',
-    dayTitle: 'שישי 15/1 · אוסקה',
-    dayColor: '#e07857',
-    time: 'בוקר',
-    emoji: '🏯',
-    title: 'טירת אוסקה',
-    subtitle: 'טירת המאחד של יפן',
-    desc: 'טירה היסטורית מ-1583 שנבנתה על ידי השוגון טויוטומי הידיושי, מאחד יפן. שחזור משנת 1931 מרשים מאוד. פארק של 600 דונם. מוזיאון יפני פיאודלי בפנים.',
-    cost: '₪54',
-    duration: '90 דק׳',
-    type: 'היסטוריה',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Osaka_Castle_Nishinomaru_Garden_April_2005.JPG/800px-Osaka_Castle_Nishinomaru_Garden_April_2005.JPG',
-    search: 'Osaka Castle Japan'
-  },
-  {
-    id: 'takoyaki',
-    day: 'יום 9',
-    dayTitle: 'שישי 15/1 · אוסקה',
-    dayColor: '#e07857',
-    time: 'צהריים',
-    emoji: '🐙',
-    title: 'טאקויאקי ב-Wanaka',
-    subtitle: 'המקור של מנת אוסקה מ-1955',
-    desc: 'אחת המסעדות הוותיקות לטאקויאקי באוסקה. השף מכין את כדורי התמנון על פלטה מיוחדת מולכם, הופך בתנועה מיומנת. הצפייה היא חצי מהחוויה.',
-    cost: '₪60',
-    duration: '45 דק׳',
-    type: 'אוכל איקוני',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Takoyaki_in_Osaka.jpg/800px-Takoyaki_in_Osaka.jpg',
-    search: 'takoyaki Osaka Wanaka'
-  },
-  {
-    id: 'dotonbori',
-    day: 'יום 9',
-    dayTitle: 'שישי 15/1 · אוסקה',
-    dayColor: '#e07857',
-    time: 'ערב',
-    emoji: '🌃',
-    title: 'דוטונבורי בלילה',
-    subtitle: 'הלב הניאוני של אוסקה',
-    desc: 'קילומטר של רחוב לאורך תעלה, שלטי ניאון ענקיים. שלט Glico Running Man מ-1935, פסל הסרטן הענק. אוקונומיאקי ב-Mizuno, רמן מ-Kinryu, גלידת מאצ׳ה.',
-    cost: '₪300',
-    duration: '2 שעות',
-    type: 'חוויה ויזואלית',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Dotonbori_Osaka_Japan02s3.jpg/800px-Dotonbori_Osaka_Japan02s3.jpg',
-    search: 'Dotonbori Osaka neon night'
-  },
-  // יום 10 - USJ
-  {
-    id: 'usj',
-    day: 'יום 10',
-    dayTitle: 'שבת 16/1 · USJ',
-    dayColor: '#9c27b0',
-    time: 'כל היום',
-    emoji: '🎢',
-    title: 'Universal Studios Japan',
-    subtitle: 'Super Nintendo World + Harry Potter',
-    desc: 'Super Nintendo World - עולמות מריו בגודל אמיתי עם ריידים. Wizarding World of Harry Potter - טירת הוגוורטס. אטרקציות אנימה (Demon Slayer, Sailor Moon).',
-    cost: '₪2,200',
-    duration: 'יום שלם',
-    type: 'פארק שעשועים',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Universal_Studios_Japan_entrance.jpg/800px-Universal_Studios_Japan_entrance.jpg',
-    search: 'Universal Studios Japan Super Nintendo'
-  },
-  // יום 11 - קניות
-  {
-    id: 'akihabara_express',
-    day: 'יום 11',
-    dayTitle: 'ראשון 17/1 · אחרון (קניות)',
-    dayColor: '#ff9800',
-    time: '09:00',
-    emoji: '📚',
-    title: 'אקיהברה מרוכזת',
-    subtitle: 'Animate + Mandarake ב-3 שעות',
-    desc: 'סיבוב יעיל: Animate (שעה) - 7 קומות אנימה, Mandarake (שעה) - 8 קומות אספנות יד שנייה. רמן באקיהברה לארוחת בוקר-צהריים.',
-    cost: 'לפי קניות',
+    id: 'monkey_park',
+    city: 'קיוטו',
+    cityKanji: '京都',
+    cityColor: '#7e57c2',
+    suggested_for: 'יום 7 או יום 8',
+    emoji: '🐒',
+    title: 'פארק הקופים Iwatayama + יער הבמבוק',
+    subtitle: '130 קופים חופשיים + יער קסום',
+    desc: 'באראשייאמה. 30 דק׳ עלייה ביער עד הפסגה, שם 130 קופי מקאקה יפנים מסתובבים חופשי. אפשר להאכיל אותם מתוך מבנה (אתם בפנים, הם בחוץ). בדרך חוזרת — יער הבמבוק המפורסם של אראשייאמה. שילוב מושלם.',
+    cost: '₪40 לאדם',
     duration: '3 שעות',
-    type: 'אנימה ומנגה',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Akihabara_night.jpg/800px-Akihabara_night.jpg',
-    search: 'Akihabara anime stores Tokyo'
+    type: 'חיות + טבע',
+    bonus: 'יער הבמבוק כבונוס',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Iwatayama_Monkey_Park_Kyoto.jpg/800px-Iwatayama_Monkey_Park_Kyoto.jpg',
+    search: 'Arashiyama Monkey Park bamboo grove'
+  },
+  // אוסקה - 2 חדשות
+  {
+    id: 'kaiyukan',
+    city: 'אוסקה',
+    cityKanji: '大阪',
+    cityColor: '#e07857',
+    suggested_for: 'יום 10 (במקום USJ)',
+    emoji: '🐳',
+    title: 'אקווריום Kaiyukan — האקווריום הגדול בעולם',
+    subtitle: 'כריש לוויתן ענק וטונה כחולה',
+    desc: 'אחד מהגדולים בעולם. בריכה מרכזית בגובה 9 קומות עם כריש לוויתן ענק (8 מטר!), טונה כחולה, קרני שמש. 15 חדרי ביוטופ שונים: ארקטיקה, יער ים, יבשת אנטרקטיקה. סיור 2-3 שעות.',
+    cost: '₪230 למשפחה',
+    duration: '3 שעות',
+    type: 'אקווריום ענק',
+    bonus: 'חלופה ל-USJ',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Osaka_Aquarium_Kaiyukan_whale_shark.jpg/800px-Osaka_Aquarium_Kaiyukan_whale_shark.jpg',
+    search: 'Osaka Aquarium Kaiyukan whale shark'
   },
   {
-    id: 'donki',
-    day: 'יום 11',
-    dayTitle: 'ראשון 17/1 · אחרון (קניות)',
-    dayColor: '#ff9800',
-    time: '13:00',
+    id: 'shinsaibashi',
+    city: 'אוסקה',
+    cityKanji: '大阪',
+    cityColor: '#e07857',
+    suggested_for: 'יום 9 (אחרי דוטונבורי)',
     emoji: '🛍️',
-    title: 'Don Quijote + מזכרות',
-    subtitle: 'הכל בזול - קוסמטיקה, חטיפים, גאדג׳טים',
-    desc: 'שרשרת חנויות ענקיות עם קוסמטיקה יפנית, אלקטרוניקה קטנה, חטיפים, מזכרות. הסניף בשיבויה פתוח 24 שעות. מזכרות מצוינות ב-200-500 שקל.',
-    cost: 'לפי רצון',
-    duration: '3 שעות',
-    type: 'שופינג מזכרות',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Don_Quijote_Shibuya.jpg/800px-Don_Quijote_Shibuya.jpg',
-    search: 'Don Quijote Japan store'
-  },
-  {
-    id: 'tsukiji',
-    day: 'יום 11',
-    dayTitle: 'ראשון 17/1 · אחרון (קניות)',
-    dayColor: '#ff9800',
-    time: '17:00',
-    emoji: '🐟',
-    title: 'שוק Tsukiji — ארוחה אחרונה',
-    subtitle: 'סושי אחרון + מזכרות אוכל',
-    desc: 'מה שנשאר משוק הדגים המפורסם. דוכני סושי טריים, מוצרי אוכל יפניים מעולים, סכיני מטבח, תה, תבלינים. ארוחה אחרונה מעולה ומזכרות אמיתיות.',
-    cost: '₪215',
+    title: 'Shinsaibashi-suji — רחוב הקניות',
+    subtitle: 'רחוב מקורה של 600 מטרים',
+    desc: 'מאות חנויות מקורות לאורך 600 מטרים. אופנה יפנית, קוסמטיקה, מזכרות, חנויות וינטאג׳. צמוד לדוטונבורי שאהבתם — אפשר לסיים שם את הערב באוסקה. פחות יקר מטוקיו.',
+    cost: 'לפי קניות',
     duration: '90 דק׳',
-    type: 'שוק איקוני',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Tsukiji_outer_market.jpg/800px-Tsukiji_outer_market.jpg',
-    search: 'Tsukiji Outer Market Tokyo'
+    type: 'שופינג מקומי',
+    bonus: 'צמוד לדוטונבורי',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Shinsaibashi_shopping_street.jpg/800px-Shinsaibashi_shopping_street.jpg',
+    search: 'Shinsaibashi suji shopping arcade Osaka'
   }
 ];
 
 // ============ STATE ============
 let currentVoter = 'eran';
-const STORAGE_KEY = 'japan_trip_ratings_v1';
+const STORAGE_KEY = 'japan_trip_v2_ratings';
 const VOTERS = { eran: 'ערן', linoy: 'לינוי', stav: 'סתיו' };
 
-// Load ratings from localStorage
 function loadRatings() {
   try {
     const data = localStorage.getItem(STORAGE_KEY);
@@ -1447,46 +1101,39 @@ function loadRatings() {
   return { eran: {}, linoy: {}, stav: {} };
 }
 
-function saveRatings(ratings) {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(ratings));
-  } catch(e) {
-    showToast('שגיאה בשמירה');
-  }
+function saveRatings(r) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(r)); }
+  catch(e) { showToast('שגיאה בשמירה'); }
 }
 
 let ratings = loadRatings();
 
-// ============ RENDER ACTIVITIES ============
+// ============ RENDER ============
 function renderActivities() {
   const container = document.getElementById('activitiesContainer');
   container.innerHTML = '';
 
-  // Group by day
-  const byDay = {};
+  // Group by city
+  const byCity = {};
   ACTIVITIES.forEach(act => {
-    if (!byDay[act.day]) byDay[act.day] = { title: act.dayTitle, color: act.dayColor, items: [] };
-    byDay[act.day].items.push(act);
+    if (!byCity[act.city]) byCity[act.city] = { kanji: act.cityKanji, color: act.cityColor, items: [] };
+    byCity[act.city].items.push(act);
   });
 
-  Object.keys(byDay).forEach(dayKey => {
-    const day = byDay[dayKey];
-    // Day header
+  Object.keys(byCity).forEach(cityKey => {
+    const city = byCity[cityKey];
     const header = document.createElement('div');
-    header.className = 'day-header';
+    header.className = 'city-header';
     header.innerHTML = `
-      <div class="day-header-inner" style="background: linear-gradient(135deg, ${day.color} 0%, ${adjustColor(day.color, -20)} 100%);">
-        <div class="kanji">${dayKey === 'יום 3' ? '雪' : dayKey === 'יום 5' ? '成人' : '日'}</div>
-        <h2>${day.title}</h2>
-        <div class="date">${day.items.length} פעילויות</div>
+      <div class="city-header-inner" style="background: linear-gradient(135deg, ${city.color} 0%, ${adjustColor(city.color, -25)} 100%);">
+        <div class="kanji">${city.kanji}</div>
+        <h2>${cityKey}</h2>
+        <div class="desc">${city.items.length} פעילויות חדשות לדירוג</div>
       </div>
     `;
     container.appendChild(header);
 
-    // Activities
-    day.items.forEach(act => {
-      container.appendChild(renderActivity(act));
-    });
+    city.items.forEach(act => container.appendChild(renderActivity(act)));
   });
 }
 
@@ -1505,9 +1152,7 @@ function renderActivity(act) {
 
   const userRating = (ratings[currentVoter] || {})[act.id] || 0;
   const allRatings = ['eran', 'linoy', 'stav'].map(v => ({
-    voter: v,
-    name: VOTERS[v],
-    score: (ratings[v] || {})[act.id] || 0
+    voter: v, name: VOTERS[v], score: (ratings[v] || {})[act.id] || 0
   }));
 
   const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(act.search)}&tbm=isch`;
@@ -1519,10 +1164,10 @@ function renderActivity(act) {
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
              loading="lazy">
         <div class="activity-img-placeholder" style="display:none;">${act.emoji}</div>
-        <div class="activity-meta-badge">${act.time}</div>
+        <div class="activity-meta-badge">${act.suggested_for}</div>
       </div>
       <div class="activity-body">
-        <div class="activity-time">${act.time} · ${act.day}</div>
+        <div class="activity-time">${act.city} · ${act.suggested_for}</div>
         <div class="activity-title">${act.emoji} ${act.title}</div>
         <div class="activity-subtitle">${act.subtitle}</div>
         <div class="activity-desc">${act.desc}</div>
@@ -1530,6 +1175,7 @@ function renderActivity(act) {
           <span class="tag tag-cost">💰 ${act.cost}</span>
           <span class="tag tag-time">⏱️ ${act.duration}</span>
           <span class="tag tag-type">🏷️ ${act.type}</span>
+          ${act.bonus ? `<span class="tag tag-bonus">⭐ ${act.bonus}</span>` : ''}
         </div>
         <a class="activity-link" href="${searchUrl}" target="_blank">📷 עוד תמונות בגוגל</a>
         <div class="rating-section">
@@ -1559,10 +1205,10 @@ function renderActivity(act) {
 }
 
 // ============ ACTIONS ============
-function setVoter(voter) {
-  currentVoter = voter;
+function setVoter(v) {
+  currentVoter = v;
   document.querySelectorAll('.voter-tab').forEach(t => {
-    t.classList.toggle('active', t.dataset.voter === voter);
+    t.classList.toggle('active', t.dataset.voter === v);
   });
   renderActivities();
   updateProgress();
@@ -1571,7 +1217,6 @@ function setVoter(voter) {
 
 function rate(actId, score) {
   if (!ratings[currentVoter]) ratings[currentVoter] = {};
-  // Toggle off if clicking same star
   if (ratings[currentVoter][actId] === score) {
     delete ratings[currentVoter][actId];
   } else {
@@ -1579,12 +1224,9 @@ function rate(actId, score) {
   }
   saveRatings(ratings);
   
-  // Re-render only this activity
   const wrap = document.getElementById(`activity-${actId}`);
   const act = ACTIVITIES.find(a => a.id === actId);
-  if (wrap && act) {
-    wrap.replaceWith(renderActivity(act));
-  }
+  if (wrap && act) wrap.replaceWith(renderActivity(act));
   updateProgress();
   updateSummary();
 }
@@ -1611,10 +1253,10 @@ function updateSummary() {
   const losers = items.filter(i => i.ratedCount >= 2 && i.avg < 3).sort((a,b) => b.avg - a.avg);
   const unrated = items.filter(i => i.ratedCount < 2);
 
-  renderSummaryGroup('winnersContainer', winners, 'כולם אהבו! פעילויות שעברו את הסף');
-  renderSummaryGroup('maybesContainer', maybes, 'פעילויות גבוליות — נחליט יחד');
-  renderSummaryGroup('losersContainer', losers, 'פעילויות שלא עברו את הסף');
-  renderSummaryGroup('unratedContainer', unrated, 'עוד לא דורגו ע״י שניים לפחות');
+  renderSummaryGroup('winnersContainer', winners, 'אף פעילות עוד לא עברה את הסף');
+  renderSummaryGroup('maybesContainer', maybes, 'אין פעילויות גבוליות');
+  renderSummaryGroup('losersContainer', losers, 'אין פעילויות שנפסלו');
+  renderSummaryGroup('unratedContainer', unrated, 'כולן דורגו!');
 }
 
 function renderSummaryGroup(containerId, items, emptyMsg) {
@@ -1626,14 +1268,14 @@ function renderSummaryGroup(containerId, items, emptyMsg) {
   container.innerHTML = items.map(item => {
     const avgDisplay = item.avg > 0 ? item.avg.toFixed(1) : '—';
     const scoresDisplay = item.scores.map((s, i) => {
-      const voter = ['ע', 'ל', 'ס'][i];
-      return `<span>${voter}: ${s > 0 ? s : '—'}</span>`;
+      const v = ['ע', 'ל', 'ס'][i];
+      return `<span>${v}: ${s > 0 ? s : '—'}</span>`;
     }).join(' · ');
     return `
       <div class="summary-item">
         <div class="summary-item-left">
           <div class="summary-item-title">${item.emoji} ${item.title}</div>
-          <div class="summary-item-day">${item.dayTitle}</div>
+          <div class="summary-item-day">${item.city} · ${item.suggested_for}</div>
         </div>
         <div class="summary-item-score">
           <div class="summary-avg">${avgDisplay}</div>
@@ -1655,7 +1297,7 @@ function shareResults() {
   const winners = items.filter(i => i.ratedCount >= 2 && i.avg >= 4).sort((a,b) => b.avg - a.avg);
   const maybes = items.filter(i => i.ratedCount >= 2 && i.avg >= 3 && i.avg < 4).sort((a,b) => b.avg - a.avg);
 
-  let text = '🎌 תוצאות הצבעת הטיול ליפן 🎌\n\n';
+  let text = '🎌 פעילויות חדשות — דירוג סופי 🎌\n\n';
   text += '✨ נכנס למסלול:\n';
   winners.forEach(w => text += `${w.avg.toFixed(1)} ⭐ ${w.title}\n`);
   if (maybes.length > 0) {
@@ -1664,43 +1306,45 @@ function shareResults() {
   }
 
   if (navigator.share) {
-    navigator.share({ text, title: 'תוצאות הצבעה — יפן' }).catch(() => {});
+    navigator.share({ text, title: 'דירוג פעילויות חדשות — יפן' }).catch(() => {});
   } else if (navigator.clipboard) {
     navigator.clipboard.writeText(text).then(() => showToast('הועתק ללוח!')).catch(() => {});
   } else {
-    showToast('לא ניתן לשתף במכשיר זה');
+    showToast('לא ניתן לשתף');
   }
 }
 
 function exportResults() {
   const data = {
     exportedAt: new Date().toISOString(),
+    version: 2,
     ratings,
     summary: ACTIVITIES.map(act => {
       const scores = ['eran', 'linoy', 'stav'].map(v => (ratings[v] || {})[act.id] || 0);
       const rated = scores.filter(s => s > 0);
       const avg = rated.length > 0 ? rated.reduce((a,b) => a+b, 0) / rated.length : 0;
-      return { title: act.title, day: act.dayTitle, avg: avg.toFixed(2), scores: { ערן: scores[0], לינוי: scores[1], סתיו: scores[2] } };
+      return { title: act.title, city: act.city, avg: avg.toFixed(2), 
+               scores: { ערן: scores[0], לינוי: scores[1], סתיו: scores[2] } };
     })
   };
   const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = `japan-ratings-${new Date().toISOString().split('T')[0]}.json`;
+  a.download = `japan-v2-ratings-${new Date().toISOString().split('T')[0]}.json`;
   a.click();
   URL.revokeObjectURL(url);
   showToast('הקובץ הורד!');
 }
 
 function resetAll() {
-  if (confirm('למחוק את כל הדירוגים של כולם? (לא ניתן לשחזר)')) {
+  if (confirm('למחוק את כל הדירוגים בגרסה 2?')) {
     ratings = { eran: {}, linoy: {}, stav: {} };
     saveRatings(ratings);
     renderActivities();
     updateProgress();
     updateSummary();
-    showToast('כל הדירוגים נמחקו');
+    showToast('נמחק!');
   }
 }
 
@@ -1711,85 +1355,10 @@ function showToast(msg) {
   setTimeout(() => toast.classList.remove('show'), 2200);
 }
 
-// ============ INIT ============
+// INIT
 renderActivities();
 updateProgress();
 updateSummary();
-
-// ============ MAP ============
-const MAP_POINTS = [
-  { lat: 35.7647, lng: 140.3864, name: '1. נריטה', desc: 'נחיתה והמראה', day: 1, color: '#666' },
-  { lat: 35.6587, lng: 139.7019, name: '2. טוקיו', desc: '5 לילות בשינג׳וקו', day: 2, color: '#e8546a' },
-  { lat: 36.9358, lng: 138.8059, name: '3. GALA Yuzawa', desc: 'יום סקי', day: 3, color: '#4a90d9' },
-  { lat: 35.2324, lng: 139.1071, name: '4. האקונה', desc: 'לילה בריוקאן', day: 4, color: '#5d8a5e' },
-  { lat: 35.6764, lng: 139.6993, name: '5. חג הבגרות', desc: 'Meiji Jingu + אסאקוסה', day: 5, color: '#d96482' },
-  { lat: 35.0116, lng: 135.7681, name: '6. קיוטו', desc: '2 לילות', day: 7, color: '#7e57c2' },
-  { lat: 34.6851, lng: 135.8428, name: '7. נארה', desc: 'יום טיול', day: 8, color: '#6fa878' },
-  { lat: 34.6937, lng: 135.5023, name: '8. אוסקה', desc: 'לילה + USJ', day: 9, color: '#e07857' },
-  { lat: 35.6587, lng: 139.7019, name: '9. חזרה לטוקיו', desc: 'יום קניות אחרון', day: 11, color: '#ff9800' }
-];
-
-function initMap() {
-  if (typeof L === 'undefined') {
-    setTimeout(initMap, 200);
-    return;
-  }
-  const map = L.map('tripMap', {
-    center: [36.5, 138.0],
-    zoom: 6,
-    scrollWheelZoom: false,
-    touchZoom: true
-  });
-  
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    attribution: '© OpenStreetMap contributors © CARTO',
-    maxZoom: 19
-  }).addTo(map);
-
-  // Draw route line
-  const latlngs = MAP_POINTS.map(p => [p.lat, p.lng]);
-  L.polyline(latlngs, {
-    color: '#c19a3a',
-    weight: 3,
-    opacity: 0.7,
-    dashArray: '8, 6'
-  }).addTo(map);
-
-  // Add markers
-  MAP_POINTS.forEach((p, idx) => {
-    const icon = L.divIcon({
-      className: 'custom-marker',
-      html: `<div style="
-        background: ${p.color};
-        color: white;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 14px;
-        border: 3px solid white;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      ">${idx + 1}</div>`,
-      iconSize: [32, 32],
-      iconAnchor: [16, 16]
-    });
-    L.marker([p.lat, p.lng], { icon })
-      .addTo(map)
-      .bindPopup(`<div style="direction: rtl; text-align: right; font-family: Heebo, sans-serif;">
-        <strong>${p.name}</strong><br>
-        <span style="color: #666; font-size: 12px;">${p.desc}</span>
-      </div>`);
-  });
-
-  // Auto-fit bounds
-  map.fitBounds(L.latLngBounds(latlngs), { padding: [30, 30] });
-}
-
-// Wait for leaflet to load then init
-window.addEventListener('load', () => setTimeout(initMap, 100));
 </script>
 
 </body>
